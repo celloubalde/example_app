@@ -24,4 +24,6 @@ end
 group :production do
   gem 'pg', '0.12.2'
 end 
-
+gem 'annotate', '2.5.0', group: :development
+gem 'protected_attributes'
+gem 'bcrypt-ruby', '3.0.1'
