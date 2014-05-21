@@ -22,10 +22,10 @@ describe "Help page" do
    page.should have_content('Help')
   end
 end
-#describe "About page" do
-#  it "should have the content 'A propos'" do
-#	visit '/static_pages/about'
-#	page.should have_content('A propos')
-#  end
-#end
+describe "About page" do
+  it "should have the content 'A propos'" do
+	visit '/static_pages/about'
+	page.should have_content('A propos')
+  end
+end
 end
