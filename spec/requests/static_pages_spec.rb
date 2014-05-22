@@ -29,4 +29,6 @@ describe "About page" do
 	page.should have_content('A propos')
   end
 end
+
+
 end

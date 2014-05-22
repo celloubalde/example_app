@@ -2,6 +2,10 @@
 
 /* universal */
 
+$grayMediumLigth: #eaeaea;
+
+
+
 html {
  overflow-y: scroll;
 }
@@ -107,6 +111,8 @@ footer ul li {
  margin-left: 10px;
 }
 
-
+div.field, div.actions {
+  margin-bottom: 10px;
+}
 
 	

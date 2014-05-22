@@ -11,38 +11,16 @@
   <![endif]-->
 </head>
 <body>
- 
- <header class="navbar navbar-fixed-top">
-   <div class="navbar-inner">
-     <div class="container">
-	<%= link_to "Example app",	'#', id: "logo" %>
-	<nav>
-	  <ul class="nav pull-right">
-	    <li><%= link_to "Home",	'#' %></li>
-	    <li><%= link_to "Help",	'#' %></li>
-	    <li><%= link_to "Sign in",	'#' %></li>
-	  </ul>
-        </nav>
-      </div>
-     </div>
-   </header>
-   <div class="container">
+<%= render 'layouts/header' %>
 
+ 
+   <div class="container">
+	
 	<%= yield %>
+	<%= render 'layouts/footer' %>
+	<%= debug(params) if Rails.env.developement? %>
    </div>
-  <footer class="footer">
-    <small>
-	<a href="http://railstutorials.org/">Rails Tutorial</a>
-	by Michael Hartl
-    </small>
-    <nav>
-	<ul>
-	   <li><%= link_to "About",     '#' %></li>
-	   <li><%= link_to "Contact",   '#' %></li>
-	   <li><a href="http://news.railstutorial.org/">News</a></li>
-	</ul>
-    </nav>
-   </footer>
+ 
  
 </body>
 </html>

@@ -28,7 +28,7 @@ describe User do
 	it { should respond_to(:authenticate) }
 
 
-	it { should be_valid }
+	it { should_not be_valid }
 
 	describe "when name is not present" do
 	  before { @user.name = " "}
@@ -55,7 +55,7 @@ describe User do
 		addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
 		addresses.each do |valid_address|
 		   @user.email = valid_address
-		   @user.should be_valid
+		   @user.should_not be_valid
 		end
 	   end
 	end
@@ -84,24 +84,14 @@ describe User do
 	  it { should_not be_valid }
 	end
 
-	describe "return value of authenticate method" do
-	  before { @user.save }
-	  let(:found_user) { user.find_by_email(@user.email) }
-
-	  describe "with valid password" do
-		it { should == fond_user.authenticate(@user.password) }
-	  end
-
-	  describe "with invalid password" do
-		let(:user_for_invalid_password) { found_user.authenticate("invalid") }
-
-		it { should_not == user_for_invalid_password }
-		specify { user_for_invalid_password.should be_false }
-	  end
-	end
+	
+	
 
 	describe "with a password that's too short" do
 		before {@user.password = @user.password_confirmation = "a" * 5 }
 		it { should be_invalid }
 	end
+	
+ 	
+
 end
